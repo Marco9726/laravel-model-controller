@@ -54,6 +54,7 @@ Route::get('/', [PageController::class, 'show'])->name('comics');
 
 // 	return view('single_comic', compact('comic', 'headerMenu', 'footerLists', 'date', 'socialArray'));
 // })->name('single_comic');
+// Route::get('/comics/{id}', [PageController::class, 'comic'])->name('single_comic');
 Route::get('/comics/{id}', [PageController::class, 'comic'])->name('single_comic');
 
 //ROTTA PER LE PAGE DELLA NAVBAR

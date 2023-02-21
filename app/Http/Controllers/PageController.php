@@ -19,7 +19,7 @@ class PageController extends Controller
 
 		return view('comics', compact('headerMenu', 'footerLists', 'comics', 'socialArray'));
 	}
-
+	// RECUPERO CON ID 
 	public function comic($id)
 	{
 		$comics = Comic::find($id);
@@ -33,4 +33,21 @@ class PageController extends Controller
 
 		return view('single_comic', $comic, compact('headerMenu', 'footerLists', 'socialArray'));
 	}
+
+	//RECUPERO CON SLUG
+	// public function comic($slug)
+	// {
+	// 	$single = Comic::where('slug', $slug)->get();
+
+	// 	$single = $single[0];
+	// 	$comic = ['comic' => $single];
+
+	// 	$headerMenu = config('headermenu');
+
+	// 	$footerLists = config('footerlists');
+
+	// 	$socialArray = config('social');
+
+	// 	return view('single_comic', $comic, compact('headerMenu', 'footerLists', 'socialArray'));
+	// }
 }
