@@ -19,4 +19,18 @@ class PageController extends Controller
 
 		return view('comics', compact('headerMenu', 'footerLists', 'comics', 'socialArray'));
 	}
+
+	public function comic($id)
+	{
+		$comics = Comic::find($id);
+		$comic = ['comic' => $comics];
+
+		$headerMenu = config('headermenu');
+
+		$footerLists = config('footerlists');
+
+		$socialArray = config('social');
+
+		return view('single_comic', $comic, compact('headerMenu', 'footerLists', 'socialArray'));
+	}
 }
